@@ -1,0 +1,24 @@
+// Sponsorship Flow - GameIn
+digraph {
+	rankdir=LR size="10,8"
+	BrandSearch [label="Brand Searches Creators" fillcolor="#E1F5FE" shape=box style=filled]
+	ViewProfile [label="View Creator Profile & Offerings" fillcolor="#B3E5FC" shape=box style=filled]
+	SelectOffering [label="Select Sponsorship Offering" fillcolor="#81D4FA" shape=box style=filled]
+	ChooseType [label="Choose Sponsorship Type
+(Regular / Prize Pool)" fillcolor="#4FC3F7" shape=box style=filled]
+	SetSchedule [label="Set Start & End Dates" fillcolor="#4DD0E1" shape=box style=filled]
+	Payment [label="Pay via Gateway
+(Stripe/Razorpay)" fillcolor="#FFF59D" shape=box style=filled]
+	Confirm [label="Sponsorship Confirmed" fillcolor="#AED581" shape=ellipse style=filled]
+	Chat [label="Brand ↔ Creator Chat Opens" fillcolor="#F8BBD0" shape=box style=filled]
+	TrackInsights [label="Brand Tracks Insights
+(Views, Engagement, Sales)" fillcolor="#CE93D8" shape=box style=filled]
+	BrandSearch -> ViewProfile
+	ViewProfile -> SelectOffering
+	SelectOffering -> ChooseType
+	ChooseType -> SetSchedule
+	SetSchedule -> Payment
+	Payment -> Confirm
+	Confirm -> Chat
+	Confirm -> TrackInsights
+}

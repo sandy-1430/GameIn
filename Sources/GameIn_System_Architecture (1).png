@@ -1,0 +1,34 @@
+// GameIn System Architecture
+digraph {
+	rankdir=LR size="10,8"
+	ClientWeb [label="Web Client (React/Next.js)" fillcolor="#B3E5FC" shape=box style=filled]
+	ClientMobile [label="Mobile Client (React Native)" fillcolor="#B3E5FC" shape=box style=filled]
+	Backend [label="Backend API (Node.js / NestJS)" fillcolor="#C5E1A5" shape=component style=filled]
+	AuthService [label="Auth Service
+(JWT + 2FA)" fillcolor="#D7CCC8" shape=component style=filled]
+	ChatService [label="Chat Service
+(WebSocket)" fillcolor="#D7CCC8" shape=component style=filled]
+	PaymentService [label="Payment Gateway
+(Stripe)" fillcolor="#FFE082" shape=component style=filled]
+	SocialService [label="Social API Integration
+(Twitch, Instagram)" fillcolor="#D1C4E9" shape=component style=filled]
+	AdminPanel [label="Admin Panel
+(Internal SPA)" fillcolor="#F8BBD0" shape=box style=filled]
+	Database [label=PostgreSQL fillcolor="#B39DDB" shape=cylinder style=filled]
+	Cache [label="Redis Cache" fillcolor="#80CBC4" shape=cylinder style=filled]
+	FileStorage [label="Cloudinary / S3
+(Media Uploads)" fillcolor="#FFCCBC" shape=folder style=filled]
+	SearchEngine [label="ElasticSearch
+(Full-text search)" fillcolor="#FFAB91" shape=component style=filled]
+	ClientWeb -> Backend
+	ClientMobile -> Backend
+	Backend -> AuthService
+	Backend -> ChatService
+	Backend -> PaymentService
+	Backend -> SocialService
+	Backend -> Database
+	Backend -> Cache
+	Backend -> FileStorage
+	Backend -> SearchEngine
+	AdminPanel -> Backend
+}
